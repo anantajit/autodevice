@@ -1,6 +1,6 @@
 [project]
 name = "autodevice"
-version = "0.1.0"
+version = "0.1.1"
 description = "Add your description here"
 readme = "README.md"
 authors = [
@@ -10,6 +10,7 @@ requires-python = ">=3.8"
 dependencies = [
     "numpy>=1.24.4",
     "nvidia-ml-py>=13.580.65",
+    "torch>=2.5.1",
 ]
 
 [build-system]

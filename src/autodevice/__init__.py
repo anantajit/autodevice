@@ -1,4 +1,5 @@
 import numpy as np
+import torch
 from . import core as __core
 
 """
@@ -14,10 +15,9 @@ def device():
         if len(free_compute) > 0 and len(free_compute[0]) > 0:
             free_device_matrix = device_matrix[free_compute]
             best_device = free_compute[0][np.argmax(free_device_matrix[:, 2])]
-            return f"cuda:{best_device}"
+            return torch.device(f"cuda:{best_device}")
         else:
             best_device = np.argmax(device_matrix[:, 2])
-            return f"cuda:{best_device}"
+            return torch.device(f"cuda:{best_device}")
     else:
-        return "cpu"
-
+        return torch.device("cpu")
